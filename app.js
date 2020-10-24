@@ -40,7 +40,7 @@ const port = process.env.PORT || 3000
     })
 app.get('/',async (req, res) => {
     try{const allReadings = await Labview.find({})
-    res.render('home')
+    res.render('home', {allReadings})
     }
     catch(e){
         console.log(e)
@@ -48,5 +48,5 @@ app.get('/',async (req, res) => {
     }
 })
 app.listen(port,()=>{
-    console.log('sever is up on port '+ port)
+    console.log('server is up on port '+ port)
 }) 
