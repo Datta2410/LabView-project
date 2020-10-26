@@ -23,14 +23,10 @@
 <body> 
   <p>Helth.io</p>
   
-    <!---<h1><%= allReadings%></h1>
-  <% for(let i = 0; i < allReadings.length; i++) { %>
-    <article>
-        <p><%= allReadings[i]._id %></p>
-        <p><%= allReadings[i].RestingHeartRate %></p>
-        <p><%= allReadings[i].BodyTemperature %></p>
-    </article>
-<% } %> ---> 
+  <form action="/userRead" method="GET">
+    <input id="ipt" type="text" placeholder="Search User" name="UserId">
+    <button id="search">Search</button>
+</form>
 
 <table>
     <tr>
@@ -39,7 +35,7 @@
  
     <% for (var i = 0; i < allReadings.length; i++) { %>
      <tr>
-       <td><%= allReadings[i]._id%></td>
+       <td><%= allReadings[i].UserId%></td>
        <td><%= allReadings[i].RestingHeartRate%></td>
        <td><%= allReadings[i].BloodOxygenSaturation %></td>
        <td><%= allReadings[i].BodyTemperature %></td>

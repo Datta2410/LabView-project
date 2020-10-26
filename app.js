@@ -26,6 +26,7 @@ const port = process.env.PORT || 3000
         try{console.log(req.body)
         const labView = new Labview({
             _id: mongoose.Types.ObjectId(),
+            UserId:req.body.UserId,
             RestingHeartRate: req.body.RestingHeartRate,
             BloodOxygenSaturation: req.body.BloodOxygenSaturation,
             BodyTemperature: req.body.BodyTemperature,
@@ -40,6 +41,15 @@ const port = process.env.PORT || 3000
     })
 app.get('/',async (req, res) => {
     try{const allReadings = await Labview.find({})
+    res.render('home', {allReadings})
+    }
+    catch(e){
+        console.log(e)
+        res.status(500).json(e)
+    }
+})
+app.get('/userRead',async (req, res) => {
+    try{const allReadings = await Labview.find({UserId:req.query.UserId})
     res.render('home', {allReadings})
     }
     catch(e){
