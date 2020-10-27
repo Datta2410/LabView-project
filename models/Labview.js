@@ -6,7 +6,8 @@ const labView = new mongoose.Schema({
     RestingHeartRate: String,
     BloodOxygenSaturation: String,
     BodyTemperature: String,
-    timeStamp: Date
+    timeStamp: Date,
+    condition:String,
 });
 
 module.exports = mongoose.model("LabView", labView);

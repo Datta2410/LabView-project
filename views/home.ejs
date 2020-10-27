@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Helth.io</title>
+    <title>Health.io</title>
     <style>
         th, td, p, input {
             font:14px Verdana;
@@ -17,11 +17,15 @@
             font-weight:bold;
         }
     </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 </head>
 <body> 
-  <p>Helth.io</p>
+    <div class="title">
+        <h1>Health.io</h1>
+        <p>By</p>
+        <p> Datta, Dhanush and Pranjal</p>
+    </div>
   
   <form action="/userRead" method="GET">
     <input id="ipt" type="text" placeholder="Search User" name="UserId">
@@ -30,7 +34,12 @@
 
 <table>
     <tr>
-       <th>Patient id</th><th>HeartRate</th><th>BloodOxygen</th><th>BodyTemperature</th><th>timeStamp</th>
+       <th>Patient Id</th>
+       <th>Heart Rate</th>
+       <th>Blood Oxygen Levels(in %)</th>
+       <th>Body Temperature</th>
+       <th>Time Of Record</th>
+       <th>Condition Of the Patient</th>
     </tr>
  
     <% for (var i = 0; i < allReadings.length; i++) { %>
@@ -40,6 +49,7 @@
        <td><%= allReadings[i].BloodOxygenSaturation %></td>
        <td><%= allReadings[i].BodyTemperature %></td>
        <td><%= allReadings[i].timeStamp %></td>
+       <td><%= allReadings[i].condition %></td>
      </tr>    
     <% } %>
  </table>
