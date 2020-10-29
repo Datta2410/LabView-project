@@ -11,7 +11,12 @@ body{
     text-align: center;
     color: rgb(9, 41, 23);
     border-radius: 8px;
-    box-shadow: 10px 10px rgb(138, 201, 180, 0.4);
+    box-shadow: 0 0 8px rgb(138, 201, 180, 0.4), 
+    0 0 12px rgb(138, 201, 180, 0.4), 
+    0 0 16px rgb(138, 201, 180, 0.4), 
+    0 0 24px rgb(138, 201, 180, 0.4),
+    0 0 32px rgb(138, 201, 180, 0.4);
+    margin: 5vh;
 }
 form{
     margin: 4vh;

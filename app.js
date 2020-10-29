@@ -1,6 +1,8 @@
 const express = require('express')
 const Labview = require('./models/Labview')
 const path = require('path')
+
+
 const mongoose = require('mongoose')
     mongoose.connect("mongodb+srv://glitch:GlItCh@cluster0.tbjsd.mongodb.net/LABVIEW",{
     useNewUrlParser: true,
