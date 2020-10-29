@@ -21,7 +21,7 @@ const viewsDir = path.join(__dirname,'./views')
 app.set('view engine', 'ejs') 
 app.set('views', viewsDir)
 
-app.use(express.json())//express.json() automatically parses the incoming JSON data
+app.use(express.json())
 const port = process.env.PORT || 3000
 const between = (x, min, max) => {
     return (x > min && x <= max)
